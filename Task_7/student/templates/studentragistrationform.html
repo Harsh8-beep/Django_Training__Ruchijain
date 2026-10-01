@@ -1,0 +1,812 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration | StudentHub</title>
+
+    <link rel="stylesheet"
+          href="{% static 'student/css/style.css' %}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="registration-page">
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="/" class="logo">
+
+            <span class="logo-icon">S</span>
+
+            <span>
+                Student<span>Hub</span>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/student-registration/"
+               class="active">
+                Registration
+            </a>
+
+            <a href="/login/">
+                Login
+            </a>
+
+        </nav>
+
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- PAGE HEADER -->
+
+<section class="registration-header">
+
+    <div class="container">
+
+        <div class="breadcrumb">
+
+            <a href="/">Home</a>
+
+            <span>›</span>
+
+            <strong>Student Registration</strong>
+
+        </div>
+
+
+        <div class="registration-title">
+
+            <div>
+
+                <span class="eyebrow">
+                    STUDENT PORTAL
+                </span>
+
+                <h1>
+                    Student Registration
+                </h1>
+
+                <p>
+                    Enter your details carefully to create
+                    your student profile.
+                </p>
+
+            </div>
+
+
+            <div class="completion-card">
+
+                <span>PROFILE COMPLETION</span>
+
+                <strong>0%</strong>
+
+                <div class="progress">
+                    <div
+                        class="progress-bar"
+                        style="width: 0%">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FORM -->
+
+<main class="registration-main">
+
+    <div class="container registration-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="registration-sidebar">
+
+            <div class="steps-card">
+
+                <h3>Registration Steps</h3>
+
+
+                <div class="step active">
+
+                    <span>01</span>
+
+                    <div>
+                        <strong>Personal Details</strong>
+                        <small>Basic information</small>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <span>02</span>
+
+                    <div>
+                        <strong>Contact Details</strong>
+                        <small>Phone & address</small>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <span>03</span>
+
+                    <div>
+                        <strong>Academic Details</strong>
+                        <small>Education information</small>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <span>04</span>
+
+                    <div>
+                        <strong>Additional Details</strong>
+                        <small>Other information</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="help-card">
+
+                <div class="help-icon">
+                    ?
+                </div>
+
+                <h3>Need help?</h3>
+
+                <p>
+                    Make sure the information you provide
+                    matches your official documents.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- FORM CARD -->
+
+        <section class="registration-card">
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- PERSONAL DETAILS -->
+
+                <div class="form-section">
+
+                    <div class="section-title">
+
+                        <div class="section-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h2>Personal Information</h2>
+
+                            <p>
+                                Tell us a little about yourself.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                First Name
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                name="first_name"
+                                placeholder="Enter first name"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Last Name
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                name="last_name"
+                                placeholder="Enter last name"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Date of Birth
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                name="dob"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Gender
+                                <span>*</span>
+                            </label>
+
+                            <select name="gender" required>
+
+                                <option value="">
+                                    Select gender
+                                </option>
+
+                                <option value="male">
+                                    Male
+                                </option>
+
+                                <option value="female">
+                                    Female
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Father's Name
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                name="father_name"
+                                placeholder="Enter father's name"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Mother's Name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="mother_name"
+                                placeholder="Enter mother's name">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-divider"></div>
+
+
+                <!-- CONTACT -->
+
+                <div class="form-section">
+
+                    <div class="section-title">
+
+                        <div class="section-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h2>Contact Information</h2>
+
+                            <p>
+                                How can we reach you?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Email Address
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="student@example.com"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Mobile Number
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="+91 XXXXX XXXXX"
+                                maxlength="10"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group full-width">
+
+                            <label>
+                                Address
+                                <span>*</span>
+                            </label>
+
+                            <textarea
+                                name="address"
+                                rows="3"
+                                placeholder="Enter your complete address"
+                                required></textarea>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                City
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                name="city"
+                                placeholder="Enter city"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                State
+                                <span>*</span>
+                            </label>
+
+                            <select name="state" required>
+
+                                <option value="">
+                                    Select state
+                                </option>
+
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Rajasthan</option>
+                                <option>Uttar Pradesh</option>
+                                <option>Delhi</option>
+                                <option>Gujarat</option>
+                                <option>Other</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                PIN Code
+                            </label>
+
+                            <input
+                                type="text"
+                                name="pincode"
+                                placeholder="Enter PIN code"
+                                maxlength="6">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-divider"></div>
+
+
+                <!-- ACADEMIC -->
+
+                <div class="form-section">
+
+                    <div class="section-title">
+
+                        <div class="section-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h2>Academic Information</h2>
+
+                            <p>
+                                Tell us about your education.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Course / Program
+                                <span>*</span>
+                            </label>
+
+                            <select name="course" required>
+
+                                <option value="">
+                                    Select course
+                                </option>
+
+                                <option>
+                                    B.Tech
+                                </option>
+
+                                <option>
+                                    B.Sc
+                                </option>
+
+                                <option>
+                                    BCA
+                                </option>
+
+                                <option>
+                                    MCA
+                                </option>
+
+                                <option>
+                                    MBA
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Department
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                name="department"
+                                placeholder="e.g. AI & Data Science"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Year
+                                <span>*</span>
+                            </label>
+
+                            <select name="year" required>
+
+                                <option value="">
+                                    Select year
+                                </option>
+
+                                <option>1st Year</option>
+                                <option>2nd Year</option>
+                                <option>3rd Year</option>
+                                <option>4th Year</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Enrollment Number
+                            </label>
+
+                            <input
+                                type="text"
+                                name="enrollment"
+                                placeholder="Enter enrollment number">
+
+                        </div>
+
+
+                        <div class="input-group full-width">
+
+                            <label>
+                                Previous Qualification
+                            </label>
+
+                            <input
+                                type="text"
+                                name="qualification"
+                                placeholder="e.g. Class 12th / Diploma">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-divider"></div>
+
+
+                <!-- ADDITIONAL -->
+
+                <div class="form-section">
+
+                    <div class="section-title">
+
+                        <div class="section-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h2>Additional Information</h2>
+
+                            <p>
+                                A few final details.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Blood Group
+                            </label>
+
+                            <select name="blood_group">
+
+                                <option value="">
+                                    Select blood group
+                                </option>
+
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Nationality
+                            </label>
+
+                            <input
+                                type="text"
+                                name="nationality"
+                                value="Indian">
+
+                        </div>
+
+
+                        <div class="input-group full-width">
+
+                            <label>
+                                About You
+                            </label>
+
+                            <textarea
+                                name="about"
+                                rows="4"
+                                placeholder="Tell us something about yourself..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AGREEMENT -->
+
+                <div class="registration-agreement">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            required>
+
+                        <span>
+                            I confirm that all the information
+                            provided above is accurate and
+                            complete to the best of my knowledge.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="form-actions">
+
+                    <a href="/" class="btn btn-outline">
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Submit Registration
+                        <span>→</span>
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div class="logo footer-logo">
+
+            <span class="logo-icon">S</span>
+
+            <span>
+                Student<span>Hub</span>
+            </span>
+
+        </div>
+
+        <p>
+            © 2026 StudentHub. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="{% static 'student/js/script.js' %}"></script>
+
+</body>
+</html>

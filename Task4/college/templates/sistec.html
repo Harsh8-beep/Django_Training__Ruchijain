@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>SISTEC Page</title>
+
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    .main {
+        width: 90%;
+        height: 320px;
+        border: 3px solid #555;
+        margin: 15px auto;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .menu {
+        display: flex;
+        gap: 20px;
+        margin: 30px 20px;
+    }
+
+    .menu button {
+        width: 90px;
+        height: 48px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    /* Home - Blue */
+    .menu a:nth-child(1) button {
+        background-color: #dbeafe;
+        border: 2px solid #3b82f6;
+        color: #1e40af;
+    }
+
+    /* SISTec - Purple */
+    .menu a:nth-child(2) button {
+        background-color: #f3e8ff;
+        border: 2px solid #9333ea;
+        color: #6b21a8;
+    }
+
+    /* LNCT - Green */
+    .menu a:nth-child(3) button {
+        background-color: #dcfce7;
+        border: 2px solid #22c55e;
+        color: #166534;
+    }
+
+    /* OIST - Orange */
+    .menu a:nth-child(4) button {
+        background-color: #ffedd5;
+        border: 2px solid #f97316;
+        color: #9a3412;
+    }
+
+    .menu button:hover {
+        opacity: 0.75;
+        transform: scale(1.05);
+    }
+
+    /* SISTEC Heading */
+    .d1 {
+        margin-top: 40px;
+    }
+
+    .c1 {
+        text-align: center;
+        border: 3px solid #6366f1;
+        background-color: #eef2ff;
+        color: #3730a3;
+        padding: 15px;
+        margin: 20px;
+        border-radius: 8px;
+    }
+
+    .c1:hover {
+        background-color: #e0e7ff;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="main">
+
+    <div class="menu">
+
+        <a href="{% url 'home' %}">
+            <button>Home</button>
+        </a>
+
+        <a href="{% url 'Sistec' %}">
+            <button>SISTec</button>
+        </a>
+
+        <a href="{% url 'Lnct' %}">
+            <button>LNCT</button>
+        </a>
+
+        <a href="{% url 'oist' %}">
+            <button>OIST</button>
+        </a>
+
+    </div>
+
+    <div class="d1">
+
+        <a href="https://www.sistecgn.ac.in/">
+            <h1 class="c1">
+                SISTEC Page
+            </h1>
+        </a>
+
+    </div>
+
+</div>
+```
+
+</body>
+
+</html>

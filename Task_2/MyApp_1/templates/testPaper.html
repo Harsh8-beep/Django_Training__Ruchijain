@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Knowledge Quiz</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    .question-block {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      background-color: #fafafa;
+    }
+    legend {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #1a252f;
+      padding: 0 8px;
+    }
+    .options-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+    }
+    .options-list li {
+      margin-bottom: 8px;
+    }
+    .options-list label {
+      display: block;
+      background: #ffffff;
+      padding: 10px 14px;
+      border: 1px solid #dcdcdc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .options-list label:hover {
+      background: #eef2f5;
+      border-color: #b0bec5;
+    }
+    .options-list input[type="radio"] {
+      margin-right: 10px;
+      accent-color: #007bff;
+    }
+    .btn-container {
+      text-align: center;
+      margin-top: 25px;
+    }
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h1>General Knowledge Quiz</h1>
+
+    <form action="#" method="post">
+
+      <!-- Question 1 -->
+      <fieldset class="question-block">
+        <legend>1. Bharat ki rajdhani (Capital) kya hai?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q1" value="mumbai"> Mumbai</label></li>
+          <li><label><input type="radio" name="q1" value="delhi"> New Delhi</label></li>
+          <li><label><input type="radio" name="q1" value="kolkata"> Kolkata</label></li>
+          <li><label><input type="radio" name="q1" value="chennai"> Chennai</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 2 -->
+      <fieldset class="question-block">
+        <legend>2. Solar System ka sabse bada grah konsa hai?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q2" value="earth"> Prithvi (Earth)</label></li>
+          <li><label><input type="radio" name="q2" value="mars"> Mangal (Mars)</label></li>
+          <li><label><input type="radio" name="q2" value="jupiter"> Brihaspati (Jupiter)</label></li>
+          <li><label><input type="radio" name="q2" value="saturn"> Shani (Saturn)</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 3 -->
+      <fieldset class="question-block">
+        <legend>3. HTML ka full form kya hai?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q3" value="html"> Hyper Text Markup Language</label></li>
+          <li><label><input type="radio" name="q3" value="html2"> High Text Machine Language</label></li>
+          <li><label><input type="radio" name="q3" value="html3"> Hyperlink and Text Markup Language</label></li>
+          <li><label><input type="radio" name="q3" value="html4"> Home Tool Markup Language</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 4 -->
+      <fieldset class="question-block">
+        <legend>4. Bharat ka Rashtriya Pakshi (National Bird) konsa hai?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q4" value="pigeon"> Kabutar</label></li>
+          <li><label><input type="radio" name="q4" value="peacock"> Mor (Peacock)</label></li>
+          <li><label><input type="radio" name="q4" value="eagle"> Baaz</label></li>
+          <li><label><input type="radio" name="q4" value="parrot"> Tota</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 5 -->
+      <fieldset class="question-block">
+        <legend>5. Computer ka brain kisse kaha jata hai?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q5" value="ram"> RAM</label></li>
+          <li><label><input type="radio" name="q5" value="hdd"> Hard Disk</label></li>
+          <li><label><input type="radio" name="q5" value="cpu"> CPU</label></li>
+          <li><label><input type="radio" name="q5" value="monitor"> Monitor</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 6 -->
+      <fieldset class="question-block">
+        <legend>6. Ek saal me kitne din hote hain (Non-leap year)?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q6" value="360"> 360</label></li>
+          <li><label><input type="radio" name="q6" value="365"> 365</label></li>
+          <li><label><input type="radio" name="q6" value="366"> 366</label></li>
+          <li><label><input type="radio" name="q6" value="370"> 370</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 7 -->
+      <fieldset class="question-block">
+        <legend>7. Paani ka chemical formula kya hai?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q7" value="co2"> CO2</label></li>
+          <li><label><input type="radio" name="q7" value="h2o"> H2O</label></li>
+          <li><label><input type="radio" name="q7" value="o2"> O2</label></li>
+          <li><label><input type="radio" name="q7" value="nacl"> NaCl</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 8 -->
+      <fieldset class="question-block">
+        <legend>8. Duniya ki sabse lambi nadi (Longest River) konsi hai?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q8" value="ganga"> Ganga</label></li>
+          <li><label><input type="radio" name="q8" value="amazon"> Amazon</label></li>
+          <li><label><input type="radio" name="q8" value="nile"> Nile</label></li>
+          <li><label><input type="radio" name="q8" value="mississippi"> Mississippi</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 9 -->
+      <fieldset class="question-block">
+        <legend>9. Bharat ki currency konsi hai?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q9" value="dollar"> Dollar</label></li>
+          <li><label><input type="radio" name="q9" value="rupee"> Rupee (Rupaya)</label></li>
+          <li><label><input type="radio" name="q9" value="yen"> Yen</label></li>
+          <li><label><input type="radio" name="q9" value="euro"> Euro</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Question 10 -->
+      <fieldset class="question-block">
+        <legend>10. Cricket ki ek team me kitne players hote hain?</legend>
+        <ul class="options-list">
+          <li><label><input type="radio" name="q10" value="9"> 9</label></li>
+          <li><label><input type="radio" name="q10" value="10"> 10</label></li>
+          <li><label><input type="radio" name="q10" value="11"> 11</label></li>
+          <li><label><input type="radio" name="q10" value="12"> 12</label></li>
+        </ul>
+      </fieldset>
+
+      <div class="btn-container">
+        <button type="submit" class="submit-btn">Submit Quiz</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>

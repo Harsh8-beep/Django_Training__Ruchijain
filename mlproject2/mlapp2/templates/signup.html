@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | CareerPredict</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; background: #f4f7fb; color: #17233c; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        .signup-card { background: #ffffff; width: 100%; max-width: 420px; padding: 35px 30px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+        .signup-card h2 { font-size: 1.8rem; color: #2457d6; margin-bottom: 8px; text-align: center; }
+        .signup-card p.subtitle { color: #5f6d83; font-size: 0.95rem; text-align: center; margin-bottom: 25px; }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+        input { width: 100%; padding: 12px; border: 1px solid #d5dce8; border-radius: 6px; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+        input:focus { border-color: #2457d6; }
+        button { width: 100%; padding: 13px; border: 0; border-radius: 6px; color: #ffffff; background: #2457d6; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 10px; transition: background 0.2s; }
+        button:hover { background: #1b44ab; }
+        .footer-links { margin-top: 22px; text-align: center; font-size: 0.9rem; color: #5f6d83; }
+        .footer-links a { color: #2457d6; text-decoration: none; font-weight: 600; }
+        .footer-links a:hover { text-decoration: underline; }
+        .error-msg { color: #dc3545; font-weight: bold; font-size: 0.9rem; margin-bottom: 15px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="signup-card">
+        <h2>Create Account</h2>
+        <p class="subtitle">Join CareerPredict to check your placement status</p>
+
+        {% if error %}
+            <p class="error-msg">{{ error }}</p>
+        {% endif %}
+
+        <form action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required autocomplete="username">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="enter your email" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required autocomplete="new-password">
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="footer-links">
+            Already have an account? <a href="{% url 'login' %}">Log In</a>
+            <br><br>
+            <a href="{% url 'home' %}">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

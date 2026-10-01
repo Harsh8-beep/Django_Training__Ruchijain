@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'uwp5052200.jpeg' %}">
+</head>
+<body>
+    <div>
+        <h1>Voting Information</h1>
+        <p>Name: {{ name }}</p>
+        <p>Country: {{ country }}</p>
+    </div>
+    <div>
+        {% if age >= 18 %}
+        <h2>You are eligible to vote.</h2>
+        {% else %}
+        <h2>You are not eligible to vote.</h2>
+        {% endif %}
+    </div>
+    <div>
+        <img src="{% static 'uwp5052200.jpeg' %}" length="500" width="500">
+    </div>
+    
+</body>
+</html>

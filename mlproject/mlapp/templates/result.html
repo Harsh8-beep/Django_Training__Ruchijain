@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Classification - Result</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Animated Gradient Background */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #0f172a, #1e3a8a, #06b6d4, #312e81);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            padding: 30px 20px;
+            color: #ffffff;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 40px;
+            transform: translateY(20px);
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #06b6d4;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Predicted Result Highlight Card */
+        .result-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15));
+            border: 1px solid rgba(52, 211, 153, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .result-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6ee7b7;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #10b981;
+            text-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+        }
+
+        /* Input Values Card */
+        .info-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 25px;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .info-value {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            word-break: break-all;
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Glass Type Reference Legend */
+        .legend-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .legend-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+            color: #38bdf8;
+            letter-spacing: 0.5px;
+        }
+
+        .legend-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .legend-list li {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            transition: background 0.2s ease;
+        }
+
+        .legend-list li:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .class-num {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, #06b6d4, #2563eb);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+            box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #06b6d4, #2563eb);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            box-sizing: border-box;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #0891b2, #1d4ed8);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 550px) {
+            .container {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .result-value {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-section">
+            <h1>Result Page</h1>
+        </div>
+
+        <div class="info-card">
+            <h2>Value Entered: <span>{{lis}}</span></h2>
+        </div>
+
+        <div class="result-card">
+            <h2>
+                The Result is: 
+                {% if ans == 1 %}
+                    <span class="result-text">Building windows (float processed)</span>
+                {% elif ans == 2 %}
+                    <span class="result-text">Building windows (non-float processed)</span>
+                {% elif ans == 3 %}
+                    <span class="result-text">Vehicle windows (float processed)</span>
+                {% elif ans == 4 %}
+                    <span class="result-text">Vehicle windows (non-float processed)</span>
+                {% elif ans == 5 %}
+                    <span class="result-text">Containers</span>
+                {% elif ans == 6 %}
+                    <span class="result-text">Tableware</span>
+                {% elif ans == 7 %}
+                    <span class="result-text">Headlamps</span>
+                {% else %}
+                    <span class="result-text">{{ ans }} (Unknown Type)</span>
+                {% endif %}
+            </h2>
+        </div>
+
+        <div class="legend-box">
+            <div class="legend-title">Type of glass reference:</div>
+            <ul class="legend-list">
+                <li><span class="class-num">1</span> Building windows (float processed)</li>
+                <li><span class="class-num">2</span> Building windows (non-float processed)</li>
+                <li><span class="class-num">3</span> Vehicle windows (float processed)</li>
+                <li><span class="class-num">4</span> Vehicle windows (non-float processed)</li>
+                <li><span class="class-num">5</span> Containers</li>
+                <li><span class="class-num">6</span> Tableware</li>
+                <li><span class="class-num">7</span> Headlamps</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Animated Gradient Background */
+body {
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    min-height: 100vh;
+    color: #f8fafc;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glowing Heading */
+header h1 {
+    margin-bottom: 45px;
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 25px rgba(129, 140, 248, 0.3);
+}
+
+/* Shopping Cards Layout */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+}
+
+/* Ultra Glassmorphism Card Style */
+.card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 30px 25px;
+    width: 270px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+/* Glowing Dynamic Buttons */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Brand Specific Colors & Ambient Glow */
+.card:nth-child(1) .btn {
+    background: linear-gradient(135deg, #ff9900, #ff5500);
+    box-shadow: 0 4px 20px rgba(255, 153, 0, 0.4);
+}
+.card:nth-child(1) .btn:hover {
+    box-shadow: 0 6px 30px rgba(255, 153, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+.card:nth-child(2) .btn {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    box-shadow: 0 4px 20px rgba(0, 114, 255, 0.4);
+}
+.card:nth-child(2) .btn:hover {
+    box-shadow: 0 6px 30px rgba(0, 114, 255, 0.7);
+    transform: translateY(-3px);
+}
+
+.card:nth-child(3) .btn {
+    background: linear-gradient(135deg, #ff3f6c, #ff007f);
+    box-shadow: 0 4px 20px rgba(255, 63, 108, 0.4);
+}
+.card:nth-child(3) .btn:hover {
+    box-shadow: 0 6px 30px rgba(255, 63, 108, 0.7);
+    transform: translateY(-3px);
+}
+
+/* Video Section Frame */
+.video-section {
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+}
+
+.video-section h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    letter-spacing: 0.5px;
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 20px;
+    padding: 6px;
+    background: linear-gradient(135deg, #38bdf8, #818cf8, #ff3f6c);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    background-color: #000;
+    outline: none;
+}

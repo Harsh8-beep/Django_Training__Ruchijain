@@ -1,0 +1,120 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Header */
+.site-header {
+    background-color: #1e293b;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide Radio Inputs */
+input[type="radio"] {
+    display: none;
+}
+
+/* Navigation Buttons (Styled Labels) */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #2563eb;
+    background-color: transparent;
+    color: #2563eb;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.nav-btn:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* Content Sections (Hidden by default) */
+.content-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.grid-section {
+    display: none;
+}
+
+.grid-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e293b;
+}
+
+/* --- Pure CSS Logic using :checked Selector --- */
+
+/* Highlight Active Button */
+#tab-home:checked ~ .nav-container label[for="tab-home"],
+#tab-about:checked ~ .nav-container label[for="tab-about"],
+#tab-info:checked ~ .nav-container label[for="tab-info"] {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* Display Relevant Content Section */
+#tab-home:checked ~ .content-container #home-content,
+#tab-about:checked ~ .content-container #about-content,
+#tab-info:checked ~ .content-container #info-content {
+    display: block;
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 12px;
+    font-weight: 600;
+    color: #475569;
+}

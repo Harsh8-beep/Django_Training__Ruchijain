@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Sites</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Heading Section -->
+    <header>
+        <h1>Shopping Sites</h1>
+    </header>
+
+    <!-- Shopping Cards Container -->
+    <div class="cards-container">
+        
+        <!-- Amazon Card -->
+        <div class="card">
+            <img src="{% static 'amazon.jpg' %}" alt="Amazon Logo">
+            <h3>Amazon</h3>
+            <a href="https://www.amazon.in" target="_blank" class="btn">Shop Now</a>
+        </div>
+
+        <!-- Flipkart Card -->
+        <div class="card">
+            <img src="{% static 'flipkart.png' %}" alt="Flipkart Logo">
+            <h3>Flipkart</h3>
+            <a href="https://www.flipkart.com" target="_blank" class="btn">Shop Now</a>
+        </div>
+
+        <!-- Myntra Card -->
+        <div class="card">
+            <img src="{% static 'myntra.jpg' %}" alt="Myntra Logo">
+            <h3>Myntra</h3>
+            <a href="https://www.myntra.com" target="_blank" class="btn">Shop Now</a>
+        </div>
+
+    </div>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <h2>Shopping ki Video</h2>
+        <div class="video-wrapper">
+            <video controls width="100%">
+                <source src="{% static '12563855_1920_1080_30fps.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Entry Form</title>
+</head>
+<body>
+
+    <form action="{% url 'saveuser' %}", method="post">
+        {% csrf_token %}
+        <div>
+            <input type="text", name="e_no", id="e_no">
+        </div>
+        <div>
+            <label for="e_name">
+                Product ID
+            </label>
+        </div>
+        <div>
+            <input type="text", name="e_no", id="e_no">
+        </div>
+        <div>
+            <label for="e_name">
+                Product Name
+            </label>
+        </div>
+        <div>
+            <input type="text", name="e_no", id="e_no">
+        </div>
+        <div>
+            <label for="e_name">
+                Product Name
+            </label>
+        </div>
+        <div>
+            <input type="text", name="e_no", id="e_no">
+        </div>
+        <div>
+            <label for="e_name">
+                Employee Name
+            </label>
+        </div>
+        <div>
+            <input type="submit" value="save">
+        </div>
+    </form>
+</body>
+</html>

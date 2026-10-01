@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech & Travel Portal (Pure CSS)</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <h1>Tech & Travel Zone</h1>
+    </header>
+
+    <!-- Main Container -->
+    <main class="page-container">
+        
+        <!-- Hidden Radio Inputs for Tab Control -->
+        <input type="radio" id="tab-home" name="tab-group" checked>
+        <input type="radio" id="tab-about" name="tab-group">
+        <input type="radio" id="tab-info" name="tab-group">
+
+        <!-- Buttons (Labels linked to Radios) -->
+        <nav class="nav-container">
+            <label for="tab-home" class="nav-btn">Home</label>
+            <label for="tab-about" class="nav-btn">About</label>
+            <label for="tab-info" class="nav-btn">Info</label>
+        </nav>
+
+        <!-- Content Area -->
+        <div class="content-container">
+
+            <!-- Home Section (8 Mobiles) -->
+            <section id="home-content" class="grid-section">
+                <h2>Mobiles Collection</h2>
+                <div class="image-grid">
+                    <div class="card"><img src="{% static 'image1.jpg' %}" alt="Mobile 1"><p>Mobile 1</p></div>
+                    <div class="card"><img src="{% static 'image2.jpg' %}" alt="Mobile 2"><p>Mobile 2</p></div>
+                    <div class="card"><img src="{% static 'image3.jpg' %}" alt="Mobile 3"><p>Mobile 3</p></div>
+                    <div class="card"><img src="{% static 'image4.jpg' %}" alt="Mobile 4"><p>Mobile 4</p></div>
+                    <div class="card"><img src="{% static 'image5.jpg' %}" alt="Mobile 5"><p>Mobile 5</p></div>
+                    <div class="card"><img src="{% static 'image6.jpg' %}" alt="Mobile 6"><p>Mobile 6</p></div>
+                    <div class="card"><img src="{% static 'image7.jpg' %}" alt="Mobile 7"><p>Mobile 7</p></div>
+                    <div class="card"><img src="{% static 'image8.jpg' %}" alt="Mobile 8"><p>Mobile 8</p></div>
+                </div>
+            </section>
+
+            <!-- About Section (8 Laptops) -->
+            <section id="about-content" class="grid-section">
+                <h2>Laptops Collection</h2>
+                <div class="image-grid">
+                    <div class="card"><img src="{% static 'image9.jpg' %}" alt="Laptop 1"><p>Laptop 1</p></div>
+                    <div class="card"><img src="{% static 'image10.jpg' %}" alt="Laptop 2"><p>Laptop 2</p></div>
+                    <div class="card"><img src="{% static 'image11.jpg' %}" alt="Laptop 3"><p>Laptop 3</p></div>
+                    <div class="card"><img src="{% static 'image12.jpg' %}" alt="Laptop 4"><p>Laptop 4</p></div>
+                    <div class="card"><img src="{% static 'image13.jpg' %}" alt="Laptop 5"><p>Laptop 5</p></div>
+                    <div class="card"><img src="{% static 'image14.jpg' %}" alt="Laptop 6"><p>Laptop 6</p></div>
+                    <div class="card"><img src="{% static 'image15.jpg' %}" alt="Laptop 7"><p>Laptop 7</p></div>
+                    <div class="card"><img src="{% static 'image16.jpg' %}" alt="Laptop 8"><p>Laptop 8</p></div>
+                </div>
+            </section>
+
+            <!-- Info Section (8 Tourist Places) -->
+            <section id="info-content" class="grid-section">
+                <h2>Tourist Places</h2>
+                <div class="image-grid">
+                    <div class="card"><img src="{% static 'images/image17.jpg' %}" alt="Place 1"><p>Tourist Place 1</p></div>
+                    <div class="card"><img src="{% static 'images/image18.jpg' %}" alt="Place 2"><p>Tourist Place 2</p></div>
+                    <div class="card"><img src="{% static 'images/image19.jpg' %}" alt="Place 3"><p>Tourist Place 3</p></div>
+                    <div class="card"><img src="{% static 'images/image20.jpg' %}" alt="Place 4"><p>Tourist Place 4</p></div>
+                    <div class="card"><img src="{% static 'images/image21.jpg' %}" alt="Place 5"><p>Tourist Place 5</p></div>
+                    <div class="card"><img src="{% static 'images/image22.jpg' %}" alt="Place 6"><p>Tourist Place 6</p></div>
+                    <div class="card"><img src="{% static 'images/image23.jpg' %}" alt="Place 7"><p>Tourist Place 7</p></div>
+                    <div class="card"><img src="{% static 'images/image24.jpg' %}" alt="Place 8"><p>Tourist Place 8</p></div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    {% block content %}
+    {% endblock %}
+    <div>
+        <h1>Charlie ji</h1>
+    </div>
+</body>
+</html>

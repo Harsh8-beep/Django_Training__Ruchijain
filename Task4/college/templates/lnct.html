@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>About Page</title>
+
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff7ed;
+        font-family: Arial, sans-serif;
+    }
+
+    .main {
+        width: 90%;
+        height: 320px;
+        border: 3px solid #7c2d12;
+        margin: 15px auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .menu {
+        display: flex;
+        gap: 20px;
+        margin: 30px 20px;
+    }
+
+    .menu button {
+        width: 90px;
+        height: 48px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    /* Home - Red */
+    .menu a:nth-child(1) button {
+        background-color: #fee2e2;
+        border: 2px solid #ef4444;
+        color: #991b1b;
+    }
+
+    /* SISTec - Teal */
+    .menu a:nth-child(2) button {
+        background-color: #ccfbf1;
+        border: 2px solid #14b8a6;
+        color: #115e59;
+    }
+
+    /* LNCT - Pink */
+    .menu a:nth-child(3) button {
+        background-color: #fce7f3;
+        border: 2px solid #ec4899;
+        color: #9d174d;
+    }
+
+    /* OIST - Brown */
+    .menu a:nth-child(4) button {
+        background-color: #fef3c7;
+        border: 2px solid #d97706;
+        color: #92400e;
+    }
+
+    .menu button:hover {
+        opacity: 0.75;
+        transform: scale(1.05);
+    }
+
+    /* LNCT Heading */
+    .d1 {
+        margin-top: 40px;
+    }
+
+    .c1 {
+        text-align: center;
+        border: 3px solid #ec4899;
+        background-color: #fdf2f8;
+        color: #9d174d;
+        padding: 15px;
+        margin: 20px;
+        border-radius: 8px;
+    }
+
+    .c1:hover {
+        background-color: #fce7f3;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="main">
+
+    <div class="menu">
+
+        <a href="{% url 'home' %}">
+            <button>Home</button>
+        </a>
+
+        <a href="{% url 'Sistec' %}">
+            <button>SISTec</button>
+        </a>
+
+        <a href="{% url 'Lnct' %}">
+            <button>LNCT</button>
+        </a>
+
+        <a href="{% url 'oist' %}">
+            <button>OIST</button>
+        </a>
+
+    </div>
+
+    <div class="d1">
+
+        <a href="https://lnct.ac.in/">
+            <h1 class="c1">
+                LNCT Page
+            </h1>
+        </a>
+
+    </div>
+
+</div>
+```
+
+</body>
+
+</html>

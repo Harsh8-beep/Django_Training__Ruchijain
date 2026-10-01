@@ -1,0 +1,354 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Home</title>
+
+    <link rel="stylesheet" href="{% static 'student/css/style.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="/" class="logo">
+            <span class="logo-icon">S</span>
+            <span>Student<span>Hub</span></span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="/" class="active">Home</a>
+
+            <a href="/student-registration/">
+                Student Registration
+            </a>
+
+            <a href="/login/">
+                Login
+            </a>
+
+            <a href="/signup/" class="nav-signup">
+                Create Account
+            </a>
+
+        </nav>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-background"></div>
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Smart Student Portal
+            </div>
+
+            <h1>
+                Your Student Journey.
+                <span>Made Simple.</span>
+            </h1>
+
+            <p>
+                Manage your student information, registration and account
+                from one simple and modern platform.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/student-registration/" class="btn btn-primary">
+                    Register Now
+                    <span>→</span>
+                </a>
+
+                <a href="/signup/" class="btn btn-secondary">
+                    Create Account
+                </a>
+
+            </div>
+
+            <div class="hero-trust">
+
+                <div class="avatars">
+                    <span>A</span>
+                    <span>R</span>
+                    <span>S</span>
+                    <span>+</span>
+                </div>
+
+                <div>
+                    <strong>Student Friendly</strong>
+                    <small>Simple • Fast • Secure</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dashboard Preview -->
+
+        <div class="dashboard-wrapper">
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-top">
+
+                    <div>
+                        <small>WELCOME BACK</small>
+                        <h3>Student Dashboard</h3>
+                    </div>
+
+                    <div class="profile-circle">
+                        S
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card blue">
+                        <div class="stat-icon">🎓</div>
+                        <span>Students</span>
+                        <strong>1,250+</strong>
+                    </div>
+
+                    <div class="stat-card purple">
+                        <div class="stat-icon">📚</div>
+                        <span>Courses</span>
+                        <strong>42+</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="progress-box">
+
+                    <div class="progress-header">
+                        <span>Registration Progress</span>
+                        <strong>80%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <small>Almost there! Complete your profile.</small>
+
+                </div>
+
+
+                <div class="mini-list">
+
+                    <div class="mini-item">
+                        <span class="check">✓</span>
+                        Personal Information
+                        <span class="done">Done</span>
+                    </div>
+
+                    <div class="mini-item">
+                        <span class="check">✓</span>
+                        Contact Details
+                        <span class="done">Done</span>
+                    </div>
+
+                    <div class="mini-item">
+                        <span class="pending">!</span>
+                        Academic Details
+                        <span class="waiting">Pending</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="floating-card floating-one">
+                ✓ Profile Updated
+            </div>
+
+            <div class="floating-card floating-two">
+                🔒 Secure Login
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>WHY STUDENTHUB</span>
+
+            <h2>
+                Everything you need,
+                <br>
+                <span>in one place.</span>
+            </h2>
+
+            <p>
+                Designed to make student management easier,
+                faster and more convenient.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon blue-icon">
+                    🎓
+                </div>
+
+                <h3>Easy Registration</h3>
+
+                <p>
+                    Register your student information through
+                    a clean and simple form.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon purple-icon">
+                    🔐
+                </div>
+
+                <h3>Secure Account</h3>
+
+                <p>
+                    Your account information stays protected
+                    with secure authentication.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon green-icon">
+                    ⚡
+                </div>
+
+                <h3>Fast & Simple</h3>
+
+                <p>
+                    No complicated screens. Everything is
+                    designed for students.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div>
+                <span>GET STARTED TODAY</span>
+
+                <h2>
+                    Ready to create your
+                    student profile?
+                </h2>
+
+                <p>
+                    It only takes a few minutes.
+                </p>
+            </div>
+
+            <a href="/student-registration/" class="btn btn-white">
+                Start Registration →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div class="logo footer-logo">
+            <span class="logo-icon">S</span>
+            <span>Student<span>Hub</span></span>
+        </div>
+
+        <p>
+            © 2026 StudentHub. All rights reserved.
+        </p>
+
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/login/">Login</a>
+            <a href="/signup/">Sign Up</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="{% static 'student/js/script.js' %}"></script>
+
+</body>
+</html>

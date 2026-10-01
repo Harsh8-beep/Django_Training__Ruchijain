@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Placement Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f3f6fb; color: #1f2937; min-height: 100vh; margin: 0; display: grid; place-items: center; }
+        main { background: white; border-radius: 12px; box-shadow: 0 6px 24px #0001; max-width: 480px; padding: 32px; text-align: center; width: calc(100% - 48px); }
+        .result { font-size: 1.4rem; font-weight: bold; margin: 24px 0; }
+        .placed { color: #15803d; } .not-placed { color: #b91c1c; }
+        a { color: #2563eb; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Placement Prediction</h1>
+        
+        {% if result == "Placed" or result == 1 or prediction == 1 or prediction == "1" or prediction == "Placed" or prediction == "placed" %}
+            <p class="result placed">Mubarak ho! aapki placement hogi.</p>
+        {% elif result == "Not Placed" or result == 0 or prediction == 0 or prediction == "0" or prediction == "Not Placed" or prediction == "not placed" %}
+            <p class="result not-placed">chiii!   aapki placement nahi hogi.   mehnat kar laadle </p>
+        {% else %}
+            <p class="result">Placement prediction: {{ result|default:prediction }}</p>
+        {% endif %}
+        
+        <a href="{% url 'home' %}">Go back</a>
+    </main>
+</body>
+</html>
